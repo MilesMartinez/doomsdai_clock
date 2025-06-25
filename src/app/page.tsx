@@ -64,11 +64,11 @@ export default function Home() {
                 <span className="animate-pulse">◄</span>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 auto-rows-auto">
                 {risks.map((risk) => (
                   <div 
                     key={risk.risk} 
-                    className={`cyber-border p-4 cursor-pointer transition-all hover:bg-cyber-darker/50 ${
+                    className={`cyber-border p-4 cursor-pointer transition-all hover:bg-cyber-darker/50 h-fit ${
                       !selectedRisk ? 'animate-pulse hover:animate-none' : ''
                     }`}
                     onClick={() => setSelectedRisk(risk === selectedRisk ? null : risk)}
@@ -105,7 +105,7 @@ export default function Home() {
               
               <div className="mt-6 space-y-4 text-white/80">
                 <p className="font-cyber text-sm md:text-base">
-                  The doomsdAI Clock is an AI-powered version of The original Doomsday Clock that has been maintained since 1947 by the Bulletin of the Atomic Scientists.
+                  The doomsdAI Clock is an AI-powered version of the original Doomsday Clock that has been maintained since 1947 by the Bulletin of the Atomic Scientists.
                 </p>
                 <p className="font-cyber text-sm md:text-base">
                   It is a symbol that represents how close humanity is to global catastrophe.
