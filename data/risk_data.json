@@ -1,0 +1,86 @@
+[
+    {
+      "risk": "Nuclear Risk",
+      "risk_score": 7,
+      "description": "High risk driven by accelerating proliferation (Iran, North Korea, South Korea considerations), modernization of arsenals by U.S., Russia, and China, collapse of arms control regimes (New START expiry, INF dead), and regional tensions (e.g., Israel–Iran, Ukraine, South Asia).",
+      "sources": [
+        "https://www.theguardian.com/commentisfree/2025/jun/18/the-guardian-view-on-israel-the-us-and-iran-you-cant-bomb-your-way-out-of-nuclear-proliferation",
+        "https://www.wsj.com/world/shifting-world-order-threatens-to-expand-the-nuclear-arms-club-1920b3da",
+        "https://www.dw.com/en/risk-of-nuclear-war-grows-amid-new-arms-race/a-72894853"
+      ],
+      "ts": "2025-06-24T00:00:00Z",
+      "dt": "2025-06-24"
+    },
+    {
+      "risk": "Climate Change",
+      "risk_score": 8,
+      "description": "Very high risk with record-high CO₂, rapidly shrinking carbon budget, mounting extreme weather damage, slow but insufficient progress on emissions, and increased renewable deployment.",
+      "sources": [
+        "https://www.theguardian.com/environment/2025/jun/18/only-two-years-left-of-world-carbon-budget-to-meet-15c-target-scientists-warn-climate-crisis",
+        "https://time.com/7295658/countries-must-boost-climate-ambition/",
+        "https://apnews.com/article/bb8e475cdaa3b3fb348f88276837d50e"
+      ],
+      "ts": "2025-06-24T00:00:00Z",
+      "dt": "2025-06-24"
+    },
+    {
+      "risk": "Emerging Technologies",
+      "risk_score": 7,
+      "description": "High risk due to AI‑enabled cyber threats, potential for AI‑powered biothreat creation, autonomous weapons development, and insufficient regulatory frameworks.",
+      "sources": [
+        "https://www.theguardian.com/technology/2025/jan/29/deepseek-artificial-intelligence-ai-safety-risk-yoshua-bengio",
+        "https://www.cyberdefensemagazine.com/the-growing-threat-of-ai-powered-cyberattacks-in-2025/",
+        "https://www.rapid7.com/blog/post/emerging-trends-in-ai-related-cyberthreats-in-2025-impacts-on-organizational-cybersecurity/"
+      ],
+      "ts": "2025-06-24T00:00:00Z",
+      "dt": "2025-06-24"
+    },
+    {
+      "risk": "Biological Threats",
+      "risk_score": 6,
+      "description": "Moderately high risk: recent avian influenza spillover, concerns of engineered pandemics, mixed global preparedness with new WHO pandemic accord but weakening biodefense budget.",
+      "sources": [
+        "https://netec.org/2025/06/17/avian-influenza-in-2025-why-this-moment-matters-for-pandemic-preparedness/",
+        "https://www.who.int/news/item/20-05-2025-world-health-assembly-adopts-historic-pandemic-agreement-to-make-the-world-more-equitable-and-safer-from-future-pandemics",
+        "https://globalbiodefense.com/2025/06/01/biodefense-headlines-1-june-2025/"
+      ],
+      "ts": "2025-06-24T00:00:00Z",
+      "dt": "2025-06-24"
+    },
+    {
+      "risk": "Information Warfare & Disinformation",
+      "risk_score": 7,
+      "description": "High risk: disinformation and cyber‑espionage remain top threats, AI‑amplified propaganda, eroding trust in democracy and public institutions.",
+      "sources": [
+        "https://www.weforum.org/press/2025/01/global-risks-report-2025-conflict-environment-and-disinformation-top-threats/",
+        "https://www.fpri.org/article/2025/01/the-fight-against-disinformation-a-persistent-challenge-for-democracy/",
+        "https://dig.watch/updates/big-techs-grip-on-information-sparks-urgent-debate-at-igf-2025-in-norway"
+      ],
+      "ts": "2025-06-24T00:00:00Z",
+      "dt": "2025-06-24"
+    },
+    {
+      "risk": "Global Governance and Diplomacy",
+      "risk_score": 6,
+      "description": "Moderate‑high risk: global institutions under strain with limited funding, politicization of aid, emerging initiatives like Pact for the Future, but execution remains weak.",
+      "sources": [
+        "https://unsdg.un.org/sites/default/files/2025/03/sotf-pact_for_the_future_adopted.pdf",
+        "https://reliefweb.int/report/world/warning-inaction-could-create-dark-future-delegates-urge-remaking-global-governance-benefit-all-countries-not-bolster-powerful-few-summit-future-concludes",
+        "https://www.interactioncouncil.org/sites/default/files/Final%20Presentation%20EXIST%20Board%206th%20Feb%202025.pdf"
+      ],
+      "ts": "2025-06-24T00:00:00Z",
+      "dt": "2025-06-24"
+    },
+    {
+      "risk": "Public Engagement & Awareness",
+      "risk_score": 5,
+      "description": "Moderate risk: public concern is growing (climate polls, civil society), but political action lags and competing priorities dilute sustained engagement.",
+      "sources": [
+        "https://undp.org/news-and-stories/worlds-largest-survey-climate-change-out-heres-what-results-show",
+        "https://climateadvocacylab.org/resource/environmental-polling-roundup-march-21st-2025",
+        "https://nature.com/articles/s44168-025-00258-x"
+      ],
+      "ts": "2025-06-24T00:00:00Z",
+      "dt": "2025-06-24"
+    }
+  ]
