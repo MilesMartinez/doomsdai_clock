@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { getLatestRiskEvals, getLatestTotalRiskScore } from '@/lib/s3';
 import { RiskData } from '@/types/risk';
 
 // Convert risk score to time format (MM:SS)
@@ -14,24 +15,25 @@ function formatTimeToMidnight(score: number): string {
 }
 
 export default function Home() {
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState<string>('');
   const [description, setDescription] = useState('TO MIDNIGHT');
   const [risks, setRisks] = useState<RiskData[]>([]);
-  const [averageRisk, setAverageRisk] = useState(0);
+  const [averageRisk, setAverageRisk] = useState<number | null>(null);
   const [selectedRisk, setSelectedRisk] = useState<RiskData | null>(null);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/api/risk-data');
-        if (!response.ok) {
-          throw new Error('Failed to fetch risk data');
-        }
-        const data = await response.json();
+        const [riskData, totalRiskScore] = await Promise.all([
+          getLatestRiskEvals(),
+          getLatestTotalRiskScore()
+        ]);
         
-        setTime(formatTimeToMidnight(data.totalRiskScore));
-        setRisks(data.riskData);
-        setAverageRisk(data.totalRiskScore);
+        if (totalRiskScore !== null) {
+          setTime(formatTimeToMidnight(totalRiskScore));
+          setAverageRisk(totalRiskScore);
+        }
+        setRisks(riskData);
       } catch (error) {
         console.error('Failed to load risk data:', error);
       }
@@ -69,7 +71,7 @@ export default function Home() {
             <p className="mb-6 text-cyber-blue font-cyber text-lg">
               <span className="text-cyber-pink">&gt;</span> SYSTEM STATUS: Monitoring global catastrophic risks
               <br />
-              <span className="text-cyber-pink">&gt;</span> THREAT LEVEL: {averageRisk.toFixed(1)}/10
+              <span className="text-cyber-pink">&gt;</span> THREAT LEVEL: {averageRisk?.toFixed(1) || 'Loading...'}/10
             </p>
             
             <div className="space-y-6 backdrop-blur-sm bg-cyber-darker/30 p-6 cyber-border">
