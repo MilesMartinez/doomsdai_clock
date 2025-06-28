@@ -1,9 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { calculateTimeToMidnight } from '@/utils/doomsday';
 import { RiskData } from '@/types/risk';
-import { getRiskData } from '@/lib/data';
+
+// Convert risk score to time format (MM:SS)
+function formatTimeToMidnight(score: number): string {
+  const maxSafeSeconds = 600; // 10 minutes
+  const seconds = Math.floor(((10 - score) / 9) * (maxSafeSeconds - 1)) + 1;
+  const safeSeconds = Math.max(1, Math.min(seconds, maxSafeSeconds));
+  const minutes = Math.floor(safeSeconds / 60);
+  const remainingSeconds = safeSeconds % 60;
+  return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+}
 
 export default function Home() {
   const [time, setTime] = useState('');
@@ -13,13 +21,20 @@ export default function Home() {
   const [selectedRisk, setSelectedRisk] = useState<RiskData | null>(null);
 
   useEffect(() => {
-    // Load risk data and calculate time
     const loadData = async () => {
-      const data = await getRiskData();
-      const { formattedTime, averageRisk } = calculateTimeToMidnight(data);
-      setTime(formattedTime);
-      setRisks(data);
-      setAverageRisk(averageRisk);
+      try {
+        const response = await fetch('/api/risk-data');
+        if (!response.ok) {
+          throw new Error('Failed to fetch risk data');
+        }
+        const data = await response.json();
+        
+        setTime(formatTimeToMidnight(data.totalRiskScore));
+        setRisks(data.riskData);
+        setAverageRisk(data.totalRiskScore);
+      } catch (error) {
+        console.error('Failed to load risk data:', error);
+      }
     };
     
     loadData();
