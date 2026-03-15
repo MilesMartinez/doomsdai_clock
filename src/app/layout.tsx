@@ -1,8 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'The DoomsdAI Clock',
@@ -16,10 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-cyber-darker text-white min-h-screen`}>
+      <body className="bg-black text-white min-h-screen">
         <Navbar />
         {children}
       </body>
     </html>
   )
-} 
+}
